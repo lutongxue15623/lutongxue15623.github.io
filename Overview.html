@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul li{
+            list-style: none;
+        }
+        a{
+            color: #ffffff;
+            text-decoration: none;
+        }
+        body{
+            background-color: #f5efe5;
+            font-size: 12px;
+            font-family: 'microsoft yahei', Araial;
+        }
+        #header{
+            width: 100%;
+            height: 90px;
+            background-image: url(img/background.png);
+        }
+        #header .top{
+            width: 1002px;
+            height: 90px;
+            margin: 0px auto;
+            position: relative;
+        }
+        #header .top .logo img{
+            width: 235px;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        #header .top .service{
+            width: 60px;
+            height: 20px;
+            position: absolute;
+            right: 5px;
+            top: 10px;
+        }
+        #header .top .service ul{
+            position: absolute;
+            top: 20px;
+            right: 7px;
+            z-index: 5;
+            display: none;
+        }
+        #header .top .service ul li{
+            width: 60px;
+            height: 20px;
+            background-color: #011648;
+            background-image: none;
+        }
+        #header .top .service:hover ul{
+            display: block;
+        }
+        #header .top .service a span{
+            width: 0px;
+            height: 0px;
+            border: 5px solid transparent;
+            border-top: 5px solid #ffffff;
+            margin-left: 3px;
+            position: relative;
+            top: 12px;
+        }
+        #header .top ul{
+            position: absolute;
+            right: 200px;
+            bottom: 10px;
+        }
+        #header .top ul li{
+            width: 63px;
+            height: 16px;
+            float: left;
+            text-align: center;
+            line-height: 16px;
+            background-image: url(img/li1.gif);
+            background-repeat: no-repeat;
+        }
+        #header .top .search-box{
+             width: 174px;
+             height: 29px;
+             background-color: #ffffff;
+             position: absolute;
+             right: 10px;
+             bottom: 5px;
+             border-radius: 10px;
+        }
+        #header .top .search-box input{
+            width: 126px;
+            height: 16px;
+            margin-right: 15px;
+            position: relative;
+            top: -10px;
+            left: 15px;
+            border: none;
+            outline: 0;
+            font-size: 12px;
+            color: #666;
+        }
+        #header .top a:hover{
+            color: #066;
+        }
+        #main{
+            width: 100%;
+            height: 1627px;
+            background: url(img/banner_01.jpg) center top no-repeat;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #main .nav{
+            width: 100%;
+            height: 37px;
+            background: url(img/background.png) 0px -90px repeat-x;
+            position: relative;
+        }
+        #main .nav ul{
+            width: 981px;
+            height: 37px;
+            margin: 0px auto;
+            display: flex;
+        }
+        #main .nav ul li{
+            flex: 1;
+            height: 37px;
+            text-align: center;
+            line-height: 37px;
+        }
+        #main .nav ul li div{
+            position: relative;
+            top: -1px;
+            display: none;
+            width: 100%;
+        }
+        #main .nav ul li div a{
+            width: 100%;
+            height: 19px;
+            background: url(img/background.png) 0px -800px;
+            font-size: 12px;
+            line-height: 19px;
+            display: block;
+            text-align: left;
+            padding-left: 10px;
+        }
+        #main .nav ul li div a:hover{
+            background: url(img/background.png) 0px -780px;
+            color: #e58100;
+        }
+        #main .nav ul li:hover{
+            background: url(img/background.png) 0px -820px;
+        }
+        #main .nav ul li:hover div{
+            display: block;
+        }
+        #main .nav ul li a{
+            font-size: 15px;
+        }
+        #main .content{
+            width: 955px;
+            height: 1450px;
+            margin: 0px auto;
+            overflow: hidden;
+            margin-top: 169px;
+        }
+        #main .content .sidebar{
+            width: 229px;
+            height: 270px;
+            background: url(img/submenu_title.png) no-repeat;
+            padding-top: 7px;
+            float: left;
+        }
+        #main .content .sidebar ul{
+            width: 229px; 
+            background: url(img/left_bg.png);
+        }
+        #main .content .sidebar .sidebar_box{
+            width: 229px;
+            height: 2px;
+            background: url(img/left_bottom_bg.png) 0px bottom no-repeat;
+        }
+        #main .content .sidebar ul li a{
+            width: 203px;
+            height: 37px;
+            color: #585858;
+            font-size: 16px;
+            line-height: 37px;
+            padding-left: 20px;
+            display: block;
+            margin-left: 3px;
+        }
+        #main .content .sidebar ul li:nth-child(1) a{
+            background: url(img/submenu_bg.jpg);
+            color: #ebebeb;
+        }
+        #main .content .sidebar ul li:nth-child(2) a{
+            background-color: #fff;
+        }
+        #main .content .sidebar ul li a:hover{
+            background: url(img/submenu_bg.jpg);
+            color: #ebebeb;
+        }
+        #main .content .column{
+            width: 689px;
+            height: 1400px;
+            padding-top: 9px;
+            background: url(img/right_title.png) no-repeat;
+            float: left;
+            margin-left: 35px;
+            overflow: hidden;
+        }
+        #main .content .column .column_main{
+            width: 639px;
+            height: 1316px;
+            background: url(img/right_bg.png);
+            padding: 24px;
+            
+        }
+        #main .content .column .column_main h2{
+            color: #cc0000;
+            margin-bottom: 5px;
+        }
+        #main .content .column .column_main p{
+            text-indent: 2em;
+            line-height: 2em;
+            font-size: 16px;
+            font-family: '宋体';
+        }
+        #main .content .column .column_main span{
+            font-size: 14px;
+            display: block;
+            position: relative;
+            top: 30px;
+            left: 430px;
+        }
+        #main .content .column .column_box{
+            width: 689px;
+            height: 4px;
+            background: url(img/right_bottom_bg.png) 0px bottom no-repeat;
+        }
+        #footer{
+            width: 988px;
+            height: 53px;
+            margin: 0px auto;
+        }
+        #footer .news_footer{
+            width: 988px;
+            height: 53px;
+            background-color: #011648;
+            position: relative;
+        }
+        #footer .news_footer a{
+            text-decoration: underline;
+        }
+        #footer .news_footer a:hover{
+            color: #066;
+        }
+        #footer .news_footer .news_footer_left{
+            width: 740px;
+            height: 36px;
+            padding: 10px 20px;
+            color: #ffffff;
+            position: relative;
+        }
+        #footer .news_footer .news_footer_left ul{
+            display: flex;
+            position: absolute;
+            right: 5px;
+            top: 10px;
+        }
+        #footer .news_footer .news_footer_left ul li{
+            width: 27px;
+            height: 27px;
+            margin-right: 5px;
+        }
+        #footer .news_footer .news_footer_left ul li a{
+            width: 27px;
+            height: 27px;
+            display: block;
+        }
+        #footer .news_footer .news_footer_left ul li:nth-child(1){
+            background: url(img/sns_icons2.png);
+        }
+        #footer .news_footer .news_footer_left ul li:nth-child(2){
+            background: url(img/sns_icons2.png) -27px 0px ;
+        }
+        #footer .news_footer .news_footer_left ul li:nth-child(3){
+            background: url(img/sns_icons2.png) -56px 0px ;
+        }
+        #footer .news_footer .news_footer_left ul li:nth-child(4){
+            background: url(img/sns_icons2.png) -88px 0px ;
+        }
+        #footer .news_footer .news_footer_left ul li:nth-child(1):hover{
+            background: url(img/sns_icons2.png) 0px -30px;
+        }
+        #footer .news_footer .news_footer_left ul li:nth-child(2):hover{
+            background: url(img/sns_icons2.png) -27px -30px;
+        }
+        #footer .news_footer .news_footer_left ul li:nth-child(3):hover{
+            background: url(img/sns_icons2.png) -56px -30px;
+        }
+        #footer .news_footer .news_footer_left ul li:nth-child(4):hover{
+            background: url(img/sns_icons2.png) -88px -30px;
+        }
+        #footer .news_footer .news_footer_right{
+            position: absolute;
+            right: 15px;
+            top: 17px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="top">
+            <div class="logo"><a href="Home page.html" target="_parent"><img src="img/logo (1).png" alt=""></a></div>
+            <div class="service">
+                <a href="#">English<span></span></a>
+                <ul>
+                    <li><a href="#">Russisch</a></li>
+                    <li><a href="#">Deutsch</a></li>
+                </ul>
+            </div>
+            <ul>
+                <li><a href="#">信息公开</a></li>
+                <li><a href="#">校园导航</a></li>
+                <li><a href="#">浙大服务</a></li>
+            </ul>
+            <div class="search-box"><input type="text" placeholder="浙大百事通搜索"><a href="#"><img src="img/main-logo.png" alt=""></a></div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="nav">
+            <ul>
+                <li><a href="Home page.html" target="_parent">首页</a></li>
+                <li>
+                    <a href="Overview.html" target="_parent">校园总览</a>
+                    <div>
+                        <a href="#">学校概况</a>
+                        <a href="#">学校章程</a>
+                        <a href="#">学校标识</a>
+                        <a href="#">现任领导</a>
+                        <a href="#">统计公报</a>
+                        <a href="#">虚拟校园</a>
+                        <a href="#">校史馆</a>
+                    </div>
+                </li>
+                <li><a href="#">求是新闻</a></li>
+                <li><a href="#">综合服务</a></li>
+                <li>
+                    <a href="#">学校机构</a>
+                    <div>
+                        <a href="#">党群机构</a>
+                        <a href="#">行政机构</a>
+                        <a href="#">学术机构</a>
+                        <a href="#">学院（系）</a>
+                        <a href="#">附属医院</a>
+                        <a href="#">校区</a>
+                        <a href="#">直属单位</a>
+                        <a href="#">全国重点实验室</a>
+                        <a href="#">有关企业</a>
+                        <a href="#">校设研究机构</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">教师队伍</a>
+                    <div>
+                        <a href="#">两院院士</a>
+                        <a href="#">文科资深教授</a>
+                        <a href="#">教育部教学名师</a>
+                        <a href="#">教师个人主页</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">教育教学</a>
+                    <div>
+                        <a href="#">本科教育</a>
+                        <a href="#">研究生教育</a>
+                        <a href="#">国际教育</a>
+                        <a href="#">继续教育</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">科学研究</a>
+                    <div>
+                        <a href="#">科研基地</a>
+                        <a href="#">科学技术研究院</a>
+                        <a href="#">社会科学研究院</a>
+                        <a href="#">工业技术转化研究院</a>
+                        <a href="#">农业技术推广中心</a>
+                        <a href="#">学术期刊</a>
+                        <a href="#">科学封面</a>
+                        <a href="#">科研政策专题</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">招生就业</a>
+                    <div>
+                        <a href="#">本科生招生</a>
+                        <a href="#">研究生招生</a>
+                        <a href="#">国际学生招生</a>
+                        <a href="#">就业指导服务</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">校园生活</a>
+                    <div>
+                        <a href="#">浙江大学报</a>
+                        <a href="#">学术资助</a>
+                        <a href="#">体育与艺术</a>
+                        <a href="#">浙大图库</a>
+                        <a href="#">求是印象</a>
+                        <a href="#">信息化服务</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#">学校概况</a></li>
+                    <li><a href="#">学校章程</a></li>
+                    <li><a href="#">学校标识</a></li>
+                    <li><a href="#">现任领导</a></li>
+                    <li><a href="#">统计公报</a></li>
+                    <li><a href="#">虚拟校园</a></li>
+                    <li><a href="#">校史馆</a></li>
+                </ul>
+                <div class="sidebar_box"></div>
+            </div>
+            <div class="column">
+                <div class="column_main">
+                    <h2>学校概况</h2>
+                    <p>浙江大学是一所历史悠久、声誉卓著的高等学府，坐落于中国历史文化名城、风景旅游胜地杭州。浙江大学的前身求是书院创立于1897年，为中国人自己最早创办的新式高等学校之一。1928年，定名国立浙江大学。抗战期间，浙大举校西迁，在贵州遵义、湄潭等地办学七年，1946年秋回迁杭州。1952年全国高等学校院系调整时，浙江大学部分系科转入兄弟高校和中国科学院，留在杭州的主体部分被分为多所单科性院校，后分别发展为原浙江大学、杭州大学、浙江农业大学和浙江医科大学。1998年，同根同源的四校实现合并，组建了新浙江大学，迈上了创建世界一流大学的新征程。习近平总书记在浙江工作期间，亲自联系浙江大学，18次莅临指导，对学校改革发展作出了一系列重要指示，描绘了高水平建成中国特色世界一流大学的宏伟蓝图。在126年的办学历程中，浙江大学始终秉承以“求是创新”为校训的优良传统，以天下为己任、以真理为依归，逐步形成了“勤学、修德、明辨、笃实”的浙大人共同价值观和“海纳江河、启真厚德、开物前民、树我邦国”的浙大精神。</p>
+                    <p>浙江大学是一所特色鲜明、在海内外有较大影响的综合型、研究型、创新型大学，学科涵盖哲学、经济学、法学、教育学、文学、历史学、理学、工学、农学、医学、管理学、艺术学、交叉学科等13个门类，设有7个学部、39个专业学院（系）、1个工程师学院、2个中外合作办学学院、7家直属附属医院。学校现有紫金港、玉泉、西溪、华家池、之江、舟山、海宁等7个校区，占地面积7931901平方米，图书馆总藏书量798.2万册。截至2022年底，学校有全日制学生65821人、国际学生5123人、教职工9746人，教师中有中国科学院全职院士24人、中国工程院全职院士21人、文科资深教授14人、教育部“长江学者奖励计划”特聘教授120人、国家杰出青年科学基金获得者193人。2022年，浙江大学入选第二轮“双一流”建设高校，21个学科入选一流学科建设名单，绝大多数学科在第五轮学科评估中取得可喜进步。</p>
+                    <p>浙江大学紧紧围绕“德才兼备、全面发展”的核心要求，全面落实立德树人根本任务，加快构建以学生成长为中心的卓越教育体系，着力培养德智体美劳全面发展、具有全球竞争力的高素质创新人才和领导者。在长期的办学历程中，学校涌现出大批著名科学家、文化大师以及各行各业的精英翘楚，包括1位诺贝尔奖获得者、5位国家最高科技奖得主、4位“两弹一星”功勋奖章获得者、1位“八一勋章”获得者、1位全军挂像英模、5位国家荣誉称号获得者、6位“最美奋斗者”和220余位两院院士等杰出典型，为实现中华民族伟大复兴、推进人类文明交流互鉴作出了积极贡献。</p>
+                    <p>浙江大学注重精研学术和科技创新，主动服务重大战略需求，加快打造国家战略科技力量，建设了一批开放性、国际化的高端学术平台，汇聚了各学科的学者大师和高水平研究团队，产出了以国家科技进步特等奖为代表的一系列重大科技成果。哲学社会科学发展势头强劲，《中国历代绘画大系》、《中华礼藏》、敦煌学等文化传承创新成果在海内外产生了广泛影响。</p>
+                    <p>“国有成均，在浙之滨”。浙江大学将坚定不移以习近平新时代中国特色社会主义思想为指导，坚持“更高质量、更加卓越、更受尊敬、更有梦想”的战略导向，致力于思想引领和知识创新，培育担当民族复兴大任的时代新人，为国家现代化和人类文明进步作出卓越贡献。</p>
+                    <span>分享到：</span>
+                </div>
+                <div class="column_box"></div>
+            </div>
+        </div>
+        
+    </div>
+    <div id="footer">
+        <div class="news_footer">
+            <div class="news_footer_left">
+                <div>
+                    <p>浙江省杭州市西湖区余杭塘路866号 | 310058 | 0571-87951111 | <a href="#">联系方式</a></p>
+                    <p>©2004-2020 浙江大学 <a href="#">浙ICP备05074421号-1 浙公网安备33010602010295</a> | 宣传部维护</p>
+                </div>
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="news_footer_right"><a href="#">网站地图</a></div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
